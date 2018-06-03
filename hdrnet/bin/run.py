@@ -79,10 +79,10 @@ def main(args):
     model_params = utils.get_model_params(sess)
 
   # -------- Setup graph ----------------------------------------------------
-  if not hasattr(models, model_params['model_name']):
-    log.error("Model {} does not exist".format(params.model_name))
-    return
-  mdl = getattr(models, model_params['model_name'])
+  # if not hasattr(models, model_params['model_name']):
+  #  log.error("Model {} does not exist".format(params.model_name))
+  #   return
+  mdl = getattr(models, model_params['model_name'].decode('utf-8'))
 
   tf.reset_default_graph()
   net_shape = model_params['net_input_size']
